@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://kurashi-score.com/sitemap.xml
+Sitemap: https://kurashi-score.com/sitemap-index.xml
