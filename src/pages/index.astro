@@ -41,29 +41,41 @@ import Layout from '../layouts/Layout.astro';
 			<div class="flex items-center justify-between mb-6 border-b border-slate-200 pb-3">
 				<h2 class="text-2xl font-bold text-slate-800 flex items-center">
 					<svg class="w-6 h-6 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9.5L18.5 8H20"></path></svg>
-					おすすめの解説記事
+					30代子育て世帯の家計改善ガイド
 				</h2>
-				<a href="/articles" class="text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center">
+				<a href="/articles" class="text-sm font-medium text-blue-600 hover:text-blue-800 flex items-center shrink-0 ml-4">
 					記事一覧を見る
 					<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
 				</a>
 			</div>
 			
 			<div class="grid md:grid-cols-3 gap-4">
-				<a href="/sim-savings-guide" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-200 group transition-all">
-					<span class="inline-block px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded mb-3">通信費の節約</span>
-					<h3 class="font-bold text-slate-800 group-hover:text-blue-600 mb-2 leading-snug">30代既婚世帯が格安SIMに乗り換えるといくら節約できる？</h3>
-					<p class="text-sm text-slate-500 line-clamp-2">大手キャリアから格安SIMへ乗り換えた場合の具体的な節約効果と、契約前に知っておくべき注意点を解説。</p>
+				<a href="/30s-living-cost-average" class="flex flex-col h-full bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-200 group transition-all">
+					<span class="inline-block px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded mb-3 self-start">生活費の平均データ</span>
+					<h3 class="font-bold text-slate-800 group-hover:text-blue-600 mb-2 leading-snug">30代子育て世帯の生活費平均はいくら？</h3>
+					<p class="text-sm text-slate-500 line-clamp-2 mb-4 flex-grow">30代子育て世帯の生活費平均と、年収400万円世帯の改善余地を解説。</p>
+					<span class="text-blue-600 font-medium text-xs flex items-center mt-auto border-t border-slate-100 pt-3">
+						30代子育て世帯の生活費平均を見る
+						<svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+					</span>
 				</a>
-				<a href="/sim-vs-major" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-200 group transition-all">
-					<span class="inline-block px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded mb-3">通信費の基礎知識</span>
-					<h3 class="font-bold text-slate-800 group-hover:text-blue-600 mb-2 leading-snug">大手キャリアと格安SIMの違いをわかりやすく解説</h3>
-					<p class="text-sm text-slate-500 line-clamp-2">「そもそも格安SIMって何？」という疑問にお答え。通信速度・サポート体制・料金の3軸から中立に比較解説します。</p>
+				<a href="/income400-save-problem" class="flex flex-col h-full bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-200 group transition-all">
+					<span class="inline-block px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded mb-3 self-start">貯金の現実</span>
+					<h3 class="font-bold text-slate-800 group-hover:text-blue-600 mb-2 leading-snug">年収400万円で貯金できないのは普通？</h3>
+					<p class="text-sm text-slate-500 line-clamp-2 mb-4 flex-grow">貯金できない理由と、30代子育て世帯の現実データ・改善ロードマップを解説。</p>
+					<span class="text-blue-600 font-medium text-xs flex items-center mt-auto border-t border-slate-100 pt-3">
+						年収400万円で貯金できない理由を見る
+						<svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+					</span>
 				</a>
-				<a href="/family-communication-cost" class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-200 group transition-all">
-					<span class="inline-block px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded mb-3">家計改善ガイド</span>
-					<h3 class="font-bold text-slate-800 group-hover:text-blue-600 mb-2 leading-snug">30代子育て世帯の通信費平均と見直しポイント</h3>
-					<p class="text-sm text-slate-500 line-clamp-2">子育て世帯のリアルな通信費の平均額と、今の生活レベルを落とさずに無理なく固定費を下げる手順。</p>
+				<a href="/household-deficit-fix" class="flex flex-col h-full bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md hover:border-blue-200 group transition-all">
+					<span class="inline-block px-2 py-1 bg-blue-50 text-blue-700 text-xs font-bold rounded mb-3 self-start">赤字の改善</span>
+					<h3 class="font-bold text-slate-800 group-hover:text-blue-600 mb-2 leading-snug">家計が赤字になる5つの原因</h3>
+					<p class="text-sm text-slate-500 line-clamp-2 mb-4 flex-grow">固定費を見直す順番と、年間改善シミュレーションを具体的に網羅。</p>
+					<span class="text-blue-600 font-medium text-xs flex items-center mt-auto border-t border-slate-100 pt-3">
+						家計赤字の原因と改善方法を見る
+						<svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+					</span>
 				</a>
 			</div>
 		</div>
