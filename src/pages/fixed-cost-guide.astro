@@ -2,67 +2,214 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="固定費削減チェックリスト | くらしスコア" description="家計改善は「固定費」から。毎月自動的に出ていくお金を止める手順。">
-  <div class="max-w-3xl mx-auto py-12 md:py-16 px-4">
+<Layout title="固定費削減チェックリスト｜まず見直すべき5つの固定費 | くらしスコア" description="家計改善は「固定費」から。通信費・保険料・サブスクなど、毎月自動的に出ていくお金をストレスなく減らす手順を徹底解説します。">
+  <div class="max-w-3xl mx-auto md:py-16 pt-8 pb-16 px-4">
     
-    <!-- Header -->
-    <div class="text-center mb-10">
+    <!-- Breadcrumbs -->
+    <nav class="text-sm text-slate-500 mb-6 flex space-x-2" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-blue-600 transition-colors">TOP</a>
+      <span>&gt;</span>
+      <a href="/articles" class="hover:text-blue-600 transition-colors">解説記事</a>
+      <span>&gt;</span>
+      <span class="text-slate-800 font-bold">固定費削減チェックリスト</span>
+    </nav>
+
+    <!-- Header 導入 -->
+    <div class="text-center mb-10 mt-6">
       <div class="bg-blue-50 text-blue-800 p-4 rounded-full inline-block mb-4">
         <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
       </div>
-      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900 leading-tight">固定費削減チェックリスト</h1>
-      <p class="text-lg text-slate-600">家計改善は「固定費」から。毎月自動的に出ていくお金を止める手順。</p>
+      <h1 class="text-3xl md:text-3xl font-bold mb-6 text-slate-900 leading-tight">固定費削減チェックリスト<br class="hidden md:block"><span class="text-xl md:text-2xl text-slate-600 mt-2 inline-block">｜まず見直すべき5つの固定費</span></h1>
+      
+      <div class="text-left md:text-center text-slate-700 space-y-4 text-base md:text-lg">
+        <p>家計改善は「固定費」から始めるのが最も効率的です。</p>
+        <p>固定費とは、家賃や通信費、保険料など「毎月（または毎年）決まって支払うお金」のことです。食費や日用品費などの変動費を切り詰めるのは日々の我慢とストレスを伴いますが、固定費は<strong>一度手続きをして見直してしまえば、その後はずっと節約効果が自動的に続く</strong>という強力な性質を持っています。</p>
+        <p>「くらしスコア」の診断結果で毎月の出費が平均より高かった方は、このページを参考に、見直し効果が大きい5つの固定費から優先的に整理を進めてみましょう。</p>
+      </div>
     </div>
 
-    <!-- Points Content -->
-    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 mb-10">
-      <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center border-b pb-4">
-        <svg class="w-6 h-6 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
-        知っておくべき3つのポイント
-      </h2>
+    <!-- Article Content -->
+    <article class="prose prose-slate prose-blue max-w-none">
       
-      <ul class="space-y-6">
-        
-        <li class="flex items-start">
-          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold mr-4 mt-0.5">1</span>
-          <p class="text-slate-700 leading-relaxed pt-1">食費や日用品などの変動費よりも、一度見直せば効果が続く固定費削減を優先する</p>
-        </li>
-        
-        <li class="flex items-start">
-          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold mr-4 mt-0.5">2</span>
-          <p class="text-slate-700 leading-relaxed pt-1">スマホ代、ネット代、保険料、サブスクの4大固定費をまず疑う</p>
-        </li>
-        
-        <li class="flex items-start">
-          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold mr-4 mt-0.5">3</span>
-          <p class="text-slate-700 leading-relaxed pt-1">クレジットカードの明細書を3ヶ月分チェックし、使途不明な引き落としを特定する</p>
-        </li>
-        
+      <!-- H2 1 -->
+      <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-blue-500 pb-2 mb-6 mt-12">まず見直すべき5つの固定費</h2>
+      <p class="mb-6">固定費の中でも、特に削減余地が大きく、生活の満足度を下げにくいのが以下の5つの項目です。</p>
+
+      <div class="space-y-4 mb-10">
+        <!-- カード1 -->
+        <div class="bg-white p-5 md:p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="font-bold text-slate-800 text-lg mb-3 flex items-center">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 mr-3 text-sm">1</span>
+            通信費（スマホ・ネット代）
+          </h3>
+          <p class="text-sm text-slate-700 mb-4">大手キャリアの無制限プランから自分に合った「格安SIM」へ乗り換えるだけで、1人あたり月5,000円、家族なら年間数万円の削減が手軽に見込める最もおすすめの項目です。</p>
+          <a href="/sim-savings-guide" class="inline-flex items-center text-sm font-bold bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] py-2 px-4 rounded-lg transition-colors no-underline">
+            格安SIM乗り換えガイドを見る &rarr;
+          </a>
+        </div>
+
+        <!-- カード2 -->
+        <div class="bg-white p-5 md:p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="font-bold text-slate-800 text-lg mb-3 flex items-center">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 mr-3 text-sm">2</span>
+            保険料
+          </h3>
+          <p class="text-sm text-slate-700 mb-4">日本の充実した公的保障（高額療養費制度や遺族年金）を正しく理解し、不要な特約や重複を整理します。万が一の備えは必要ですが「不安だから」と入りすぎるのは家計を圧迫する原因になります。</p>
+          <a href="/insurance-review" class="inline-flex items-center text-sm font-bold bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] py-2 px-4 rounded-lg transition-colors no-underline">
+            保障が適正かチェックする &rarr;
+          </a>
+        </div>
+
+        <!-- カード3 -->
+        <div class="bg-white p-5 md:p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="font-bold text-slate-800 text-lg mb-3 flex items-center">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 mr-3 text-sm">3</span>
+            住宅費
+          </h3>
+          <p class="text-sm text-slate-700 mb-0">家計の中で最も大きな割合を占めます。賃貸の場合は更新のタイミングでの家賃交渉や、より安い物件への引っ越し。持ち家の場合は住宅ローンの借り換えによって、総支払額を大幅に減らせる可能性があります（ただし手数料との兼ね合いに注意が必要です）。</p>
+        </div>
+
+        <!-- カード4 -->
+        <div class="bg-white p-5 md:p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="font-bold text-slate-800 text-lg mb-3 flex items-center">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 mr-3 text-sm">4</span>
+            車関連費
+          </h3>
+          <p class="text-sm text-slate-700 mb-0">自動車保険（車両保険の要否・ネット型への切り替え）、駐車場代、ガソリン代などを定期的に見直します。都市部で月に数回しか乗らないのであれば、カーシェアやレンタカーへの切り替えも強力な選択肢です。</p>
+        </div>
+
+        <!-- カード5 -->
+        <div class="bg-white p-5 md:p-6 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="font-bold text-slate-800 text-lg mb-3 flex items-center">
+            <span class="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 mr-3 text-sm">5</span>
+            サブスクリプション（定額サービス）
+          </h3>
+          <p class="text-sm text-slate-700 mb-3">動画配信、音楽、雑誌読み放題、フィットネスジムなど、月額数百円〜数千円のサービスも塵も積もれば山となります。使っていないサービスは一旦すべて解約して洗い出すのが基本です。</p>
+          <a href="/subs-cleanup" class="inline-flex items-center text-sm font-bold bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] py-2 px-4 rounded-lg transition-colors no-underline">
+            サブスク整理のコツを見る &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- H2 2 -->
+      <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-blue-500 pb-2 mb-6 mt-12">カテゴリ別の具体的削減方法</h2>
+      <p class="mb-6">それでは、手軽に着手できて効果が高い「通信費」「保険料」「サブスク」の3つについて、具体的な見直しの流れを解説します。</p>
+
+      <h3 class="text-xl font-bold text-slate-800 mt-8 mb-4">通信費の削減方法（難易度：低｜効果：大）</h3>
+      <p>現代において最も簡単で効果を感じやすいのが通信費です。手続きは数時間で終わりますが、その効果は毎月続きます。</p>
+      <ul class="list-disc list-inside space-y-2 mb-4 text-slate-700">
+        <li>直近3ヶ月の「データ利用量（ギガ数）」をマイページで確認する</li>
+        <li>利用量が20GB以下なら、大手キャリアから「格安SIM（MVNO等）」やオンライン専用プランへ乗り換える</li>
+        <li>自宅の光回線とのセット割や家族割が本当に得か再計算する</li>
       </ul>
-    </div>
+      <p class="mb-8">
+        <a href="/sim-compare" class="text-blue-600 font-bold hover:underline">【解説】格安SIM乗り換えガイドで具体的に比較する</a>
+      </p>
+
+      <h3 class="text-xl font-bold text-slate-800 mt-8 mb-4">保険料の削減方法（難易度：中｜効果：大）</h3>
+      <p>生命保険や医療保険は「何となく不安だから」と放置されがちです。家族構成の変化に合わせて定期メンテナンスを行いましょう。</p>
+      <ul class="list-disc list-inside space-y-2 mb-4 text-slate-700">
+        <li>加入中の保険証券をすべて並べ、保障内容と月額を書き出す</li>
+        <li>高額療養費制度などの「公的保障」を前提にして、本当に民間保険が必要なリスクを計算する</li>
+        <li>必要保障額を満たしつつ、貯蓄型ではなく割安な「掛け捨て」を中心に再構築する</li>
+      </ul>
+      <p class="mb-8">
+        <a href="/insurance-review" class="text-blue-600 font-bold hover:underline">【解説】保障が適正かチェックする方法を見る</a>
+      </p>
+
+      <h3 class="text-xl font-bold text-slate-800 mt-8 mb-4">サブスク整理の方法（難易度：低｜効果：小〜中）</h3>
+      <p>一つ一つは少額ですが、気づかないうちに年間数万円払っていることがよくあります。</p>
+      <ul class="list-disc list-inside space-y-2 mb-4 text-slate-700">
+        <li>クレジットカードの明細を過去3ヶ月分すべて確認する</li>
+        <li>「直近1ヶ月で一度も利用しなかったサービス」は一旦容赦なく解約する</li>
+        <li>残すサービスの中で、ずっと使うものは「年払い」に変更して割引を受ける</li>
+        <li>家族で別々に契約しているものは「ファミリープラン」に統合できないか確認する</li>
+      </ul>
+
+      <!-- H2 3 -->
+      <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-blue-500 pb-2 mb-6 mt-12">固定費削減の年間インパクト目安</h2>
+      <p class="mb-4">実際に上記を見直した場合、一般的な家庭で1年間にどれくらいのお金が浮く可能性があるのか、目安をまとめました。ご家庭の現状によって異なりますが、組み合わせることで大きな節約効果が期待できます。</p>
+
+      <div class="overflow-x-auto mb-10">
+        <table class="w-full text-left border-collapse border border-slate-200 min-w-[500px]">
+          <thead>
+            <tr class="bg-slate-100">
+              <th class="p-3 border border-slate-200 font-bold text-slate-800">見直す項目</th>
+              <th class="p-3 border border-slate-200 font-bold text-slate-800">年間削減目安（概算）</th>
+              <th class="p-3 border border-slate-200 font-bold text-slate-800">主な着眼点</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-3 border border-slate-200 font-bold">通信費</td>
+              <td class="p-3 border border-slate-200 text-blue-700 font-bold">30,000〜50,000円</td>
+              <td class="p-3 border border-slate-200 text-sm text-slate-600">大手キャリアから格安プラン・格安SIMへの移行</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-3 border border-slate-200 font-bold">保険料</td>
+              <td class="p-3 border border-slate-200 text-blue-700 font-bold">50,000〜100,000円</td>
+              <td class="p-3 border border-slate-200 text-sm text-slate-600">重複特約の解約、掛け捨てへの切り替え</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-3 border border-slate-200 font-bold">サブスク</td>
+              <td class="p-3 border border-slate-200 text-blue-700 font-bold">10,000〜30,000円</td>
+              <td class="p-3 border border-slate-200 text-sm text-slate-600">不要サービスの解約、年払い化</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="text-xs text-slate-500 mt-2 text-right">※効果を保証するものではありません。</p>
+      </div>
+
+      <!-- H2 4 -->
+      <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-blue-500 pb-2 mb-6 mt-12">家計改善の正しい順番</h2>
+      <p class="mb-4">最後に、長期的に豊かな家計を作るための「正しい改善ステップ」をご紹介します。多くの人がいきなり投資を始めようとしますが、足元の支出をコントロールする環境作りが最も重要です。</p>
+
+      <div class="space-y-4 mb-6 relative pl-8 md:pl-12">
+        <div class="absolute left-3 md:left-5 top-4 bottom-8 w-0.5 bg-blue-200"></div>
+
+        <div class="relative">
+          <div class="absolute -left-8 md:-left-12 top-0.5 w-6 h-6 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center z-10 shadow">1</div>
+          <h4 class="font-bold text-slate-900 border-none pb-0 pt-0 mb-1">【STEP 1】固定費の削減（ここから始める）</h4>
+          <p class="text-sm text-slate-700 mt-1">本ページで解説した通りです。一度仕組みを作り直せば自動的に節約が続きます。まずはここを徹底します。</p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-8 md:-left-12 top-0.5 w-6 h-6 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center z-10 shadow">2</div>
+          <h4 class="font-bold text-slate-900 border-none pb-0 pt-0 mb-1">【STEP 2】変動費（食費・交際費）の管理</h4>
+          <p class="text-sm text-slate-700 mt-1">固定費を抑えた上で、無理のない範囲で日常の出費を管理します。家計簿アプリなどを活用して予算内に収めるマインドを育てます。</p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-8 md:-left-12 top-0.5 w-6 h-6 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center z-10 shadow">3</div>
+          <h4 class="font-bold text-slate-900 border-none pb-0 pt-0 mb-1">【STEP 3】貯蓄率の向上と生活防衛資金の確保</h4>
+          <p class="text-sm text-slate-700 mt-1">「収入の○%は必ず貯金する（先取り貯金）」というルールを作り、最低でも生活費の半年〜1年分を現金（生活防衛資金）として確保します。</p>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -left-8 md:-left-12 top-0.5 w-6 h-6 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center z-10 shadow">4</div>
+          <h4 class="font-bold text-slate-900 border-none pb-0 pt-0 mb-1">【STEP 4】余剰資金での投資（NISAなど）</h4>
+          <p class="text-sm text-slate-700 mt-1">生活防衛資金が貯まり、毎月の家計が黒字化して初めて「投資」へお金を回します。ここでようやく資産が効率的に増え始めます。</p>
+        </div>
+      </div>
+      
+      <div class="bg-blue-50 p-4 rounded-xl text-sm text-blue-800 mb-8 font-bold text-center">
+        この順番を守ることで、「投資でお金が減って生活が苦しくなる」といったリスクを回避し、ストレスのない家計改善が可能になります。
+      </div>
+
+    </article>
 
     <!-- Warning / Disclaimer -->
-    <div class="bg-yellow-50 border border-yellow-200 text-yellow-800 p-5 rounded-xl text-sm mb-10 flex items-start">
-      <svg class="w-5 h-5 mr-3 mt-0.5 flex-shrink-0 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-      <div>
-        <p class="font-bold mb-1">ご注意事項</p>
-        <p>本ページの情報は一般的な目安であり、実際の効果や最適なプランは個人の状況によって異なります。各種サービスの契約等に際しては、提供元の公式規定や最新情報を必ずご確認のうえ、ご自身の判断でご対応ください。</p>
-      </div>
+    <div class="bg-slate-50 border border-slate-200 text-slate-600 p-5 rounded-xl text-xs mt-12 mb-10">
+      <p class="font-bold mb-1">ご注意事項</p>
+      <p>本ページの情報は一般的な目安であり、実際の効果や最適なプランは個人の状況によって異なります。各種サービスの契約等に際しては、提供元の公式規定や最新情報を必ずご確認のうえ、ご自身の判断でご対応ください。</p>
     </div>
 
-    <!-- CTA & Navigation -->
-    <div class="text-center space-y-6">
-      <div class="mb-10">
-        <a href="#" class="inline-flex items-center justify-center w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 group no-underline">
-          おすすめのサービスを見る
-          <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </a>
-      </div>
-      
+    <!-- Back to Score buttons -->
+    <div class="text-center space-y-6 mt-10">
       <div class="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="/score?result=true" class="inline-flex items-center justify-center w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl shadow transition-colors no-underline">
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-          診断結果を見る
+          診断結果に戻る
         </a>
         <a href="/score" class="inline-flex items-center justify-center w-full sm:w-auto bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold py-3 px-6 rounded-xl transition-colors no-underline">
           <svg class="w-5 h-5 mr-2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>

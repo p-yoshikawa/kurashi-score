@@ -21,8 +21,8 @@
             <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>店舗サポートあり</li>
           </ul>
         </div>
-        <a href="#" target="_blank" rel="noopener noreferrer" data-cta="sim_uq" class="score-cta-btn block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-3 px-4 rounded-lg transition-all duration-200 ease-in-out text-sm">
-          公式で料金を見る &rarr;
+        <a href="#" class="score-cta-btn block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-3 px-4 rounded-lg transition-all duration-200 ease-in-out text-sm" data-cta="sim_uq" data-offer="uq">
+          <span class="cta-text">公式で料金を見る &rarr;</span>
         </a>
       </div>
 
@@ -36,8 +36,8 @@
             <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>シンプルプラン</li>
           </ul>
         </div>
-        <a href="#" target="_blank" rel="noopener noreferrer" data-cta="sim_libmo" class="score-cta-btn block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-3 px-4 rounded-lg transition-all duration-200 ease-in-out text-sm">
-          詳細を確認する &rarr;
+        <a href="#" class="score-cta-btn block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-3 px-4 rounded-lg transition-all duration-200 ease-in-out text-sm" data-cta="sim_libmo" data-offer="libmo">
+          <span class="cta-text">詳細を確認する &rarr;</span>
         </a>
       </div>
 
@@ -51,8 +51,8 @@
             <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>シンプルな料金設定</li>
           </ul>
         </div>
-        <a href="#" target="_blank" rel="noopener noreferrer" data-cta="hikari_itsuki" class="score-cta-btn block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-3 px-4 rounded-lg transition-all duration-200 ease-in-out text-sm">
-          料金プランを見る &rarr;
+        <a href="#" class="score-cta-btn block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-3 px-4 rounded-lg transition-all duration-200 ease-in-out text-sm" data-cta="hikari_itsuki" data-offer="itsukihikari">
+          <span class="cta-text">料金プランを見る &rarr;</span>
         </a>
       </div>
     </div>
@@ -75,8 +75,8 @@
         </ul>
       </div>
       <div class="flex items-center md:w-1/3">
-        <a href="#" target="_blank" rel="noopener noreferrer" data-cta="hoken_findit" class="score-cta-btn block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-4 px-6 rounded-xl transition-all duration-200 ease-in-out text-base">
-          無料で相談内容を確認 &rarr;
+        <a href="#" class="score-cta-btn block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-4 px-6 rounded-xl transition-all duration-200 ease-in-out text-base" data-cta="hoken_findit" data-offer="findit">
+          <span class="cta-text">無料で相談内容を確認 &rarr;</span>
         </a>
       </div>
     </div>
@@ -84,23 +84,71 @@
 </div>
 
 <script>
+  // Configuration for Score Page Affiliate URLs
+  const supportLinks: Record<string, string> = {
+    uq: '',
+    libmo: '',
+    itsukihikari: '',
+    findit: ''
+  };
+
   document.addEventListener('DOMContentLoaded', () => {
+    
+    // Initialize states
+    const updateDisabledCtas = () => {
+      document.querySelectorAll('.score-cta-btn').forEach((btn) => {
+        const offer = btn.getAttribute('data-offer');
+        if (offer) {
+          const url = supportLinks[offer];
+          if (url) {
+            btn.setAttribute('href', url);
+            btn.setAttribute('target', '_blank');
+            btn.setAttribute('rel', 'noopener noreferrer');
+          } else {
+            // Disable button visually
+            btn.setAttribute('href', 'javascript:void(0)');
+            btn.classList.add('opacity-60', 'cursor-not-allowed', 'hover:bg-[#EFF6FF]', 'hover:text-[#2563EB]', 'hover:shadow-none');
+            btn.removeAttribute('target');
+            btn.removeAttribute('rel');
+            btn.setAttribute('title', 'リンク取得後に有効化します');
+            
+            // Adjust text
+            const textSpan = btn.querySelector('.cta-text');
+            if (textSpan) {
+              const currentText = textSpan.innerHTML.replace(' &rarr;', '');
+              textSpan.innerHTML = `${currentText}（準備中）`;
+            }
+          }
+        }
+      });
+    };
+
+    updateDisabledCtas();
+
     document.body.addEventListener('click', (e) => {
-      const target = (e.target as HTMLElement).closest('.score-cta-btn');
+      const target = (e.target as HTMLElement).closest('.score-cta-btn') as HTMLAnchorElement;
       if (target) {
+        // Prevent default navigation if not a real link
+        const href = target.getAttribute('href');
+        if (!href || href === '#' || href === 'javascript:void(0)') {
+          e.preventDefault();
+        }
+
         const ctaName = target.getAttribute('data-cta');
+        const offer = target.getAttribute('data-offer');
         const position = target.getAttribute('data-position') || 'cards';
         const page = window.location.pathname;
         
         console.log('[Event Tracking]', 'cta_click', {
           cta: ctaName,
+          offer: offer,
           page: page,
           position: position
         });
         
         // Uncomment and update if gtag is available
         // if (typeof window.gtag === 'function') {
-        //   window.gtag('event', 'cta_click', { cta: ctaName, page: page, position: position });
+        //   window.gtag('event', 'cta_click', { cta: ctaName, offer: offer, page: page, position: position });
         // }
       }
     });

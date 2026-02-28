@@ -2,68 +2,170 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="保険見直しのポイント | くらしスコア" description="過剰な保障を見直し、毎月の固定費を下げるための保険整理ガイド。">
-  <div class="max-w-3xl mx-auto py-12 md:py-16 px-4">
+<Layout title="保障が適正かチェックする｜保険見直しガイド | くらしスコア" description="過剰な保障を見直し、毎月の固定費を下げるための保険整理ガイド。公的保障の基本からケース別のアドバイスまで徹底解説。">
+  <div class="max-w-3xl mx-auto md:py-16 pt-8 pb-16 px-4">
     
-    <!-- Header -->
-    <div class="text-center mb-10">
+    <!-- Breadcrumbs -->
+    <nav class="text-sm text-slate-500 mb-6 flex space-x-2" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-blue-600 transition-colors">TOP</a>
+      <span>&gt;</span>
+      <a href="/articles" class="hover:text-blue-600 transition-colors">解説記事</a>
+      <span>&gt;</span>
+      <span class="text-slate-800 font-bold">保険見直しガイド</span>
+    </nav>
+
+    <!-- Header 導入 -->
+    <div class="text-center mb-10 mt-6">
       <div class="bg-blue-50 text-blue-800 p-4 rounded-full inline-block mb-4">
         <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
       </div>
-      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900 leading-tight">保険見直しのポイント</h1>
-      <p class="text-lg text-slate-600">過剰な保障を見直し、毎月の固定費を下げるための保険整理ガイド。</p>
-      <p class="mt-4 text-slate-700 max-w-xl mx-auto text-left md:text-center bg-white p-3 rounded-lg border border-slate-100 shadow-sm text-sm">保険料は家計の中でも大きなウェイトを占めます。実際に<a href="/30s-living-cost-average" class="text-blue-600 hover:underline font-medium">30代子育て世帯の生活費平均</a>を見ても、毎月数万円の負担になっていることがわかります。</p>
+      <h1 class="text-3xl md:text-4xl font-bold mb-6 text-slate-900 leading-tight">保障が適正かチェックする<br class="hidden md:block"><span class="text-2xl md:text-3xl text-slate-600">｜保険見直しガイド</span></h1>
+      
+      <div class="text-left md:text-center text-slate-700 space-y-4 text-base md:text-lg">
+        <p>過剰な保障を見直し、毎月の固定費を賢く下げるための保険整理ガイド。</p>
+        <p>「万が一の備え」は大切ですが、気づかないうちに不要な特約や重複した保険に入っていませんか？保険料は家計の中でも大きなウェイトを占めるため、一度整理するだけで数千円〜数万円の節約につながります。</p>
+        <p class="font-bold text-blue-700 bg-blue-50 inline-block px-4 py-2 rounded-lg">家計スコア診断で「保険料が高め」と出た方は、ここで保障内容を整理してみましょう。</p>
+      </div>
     </div>
 
-    <!-- Points Content -->
-    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 mb-10">
-      <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center border-b pb-4">
-        <svg class="w-6 h-6 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
-        知っておくべき3つのポイント
-      </h2>
+    <!-- Article Content -->
+    <article class="prose prose-slate prose-blue max-w-none">
       
-      <ul class="space-y-6">
-        
-        <li class="flex items-start">
-          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold mr-4 mt-0.5">1</span>
-          <p class="text-slate-700 leading-relaxed pt-1">高額療養費制度などの「公的保険」でカバーできる範囲を正しく知る</p>
-        </li>
-        
-        <li class="flex items-start">
-          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold mr-4 mt-0.5">2</span>
-          <p class="text-slate-700 leading-relaxed pt-1">ライフステージに合わせて、不要な特約や重複している保険を外す</p>
-        </li>
-        
-        <li class="flex items-start">
-          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold mr-4 mt-0.5">3</span>
-          <p class="text-slate-700 leading-relaxed pt-1">貯蓄型保険よりも「掛け捨て」で安く抑え、浮いたお金を投資に回す。高すぎる保険料は<a href="/income400-save-problem" class="text-blue-600 hover:underline">年収400万円で貯金できない原因</a>の典型例なので、<a href="/household-deficit-fix" class="text-blue-600 hover:underline">家計が赤字になる固定費の順番</a>でも上位の見直し対象となります。</p>
-        </li>
-        
+      <!-- H2 1 -->
+      <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-blue-500 pb-2 mb-6 mt-12">まずは公的保障でどこまでカバーされるか知る</h2>
+      <p class="mb-6">日本には手厚い公的医療保険制度や年金制度（社会保険）があります。この存在を無視して不安だけで民間の保険に入ると、結果として「入りすぎ」を引き起こしてしまいます。民間保険ですべてを備える必要があるとは限りません。まずは以下の公的保障が使えることを把握しておきましょう。</p>
+
+      <div class="space-y-4 mb-8">
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+          <h3 class="font-bold text-slate-800 text-lg mb-2 flex items-center"><svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>高額療養費制度</h3>
+          <p class="text-sm text-slate-700 mb-0">医療費が家計の負担になりすぎないよう、月々の自己負担額の上限を定める制度です。一般的な年収であれば、たとえ大きな手術をしてひと月に100万円の医療費がかかったとしても、実際の窓口負担は8万〜9万円程度に収まるようになっています（※差額ベッド代や食事代などは全額自己負担）。</p>
+        </div>
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+          <h3 class="font-bold text-slate-800 text-lg mb-2 flex items-center"><svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>傷病手当金（会社員・公務員など）</h3>
+          <p class="text-sm text-slate-700 mb-0">病気やケガで長期間会社を休まざるを得なくなり、給与が出ない場合に、最長1年6ヶ月にわたり給与の約3分の2が支給される健康保険の制度です。これにより、突然収入がゼロになるリスクを避けることができます（※自営業・フリーランスなど国民健康保険の加入者には原則ありません）。</p>
+        </div>
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+          <h3 class="font-bold text-slate-800 text-lg mb-2 flex items-center"><svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>遺族年金</h3>
+          <p class="text-sm text-slate-700 mb-0">一家の生計を支える方が亡くなった場合、残された家族に対して支払われる公的な年金です。お子様がいる場合は「遺族基礎年金」が、会社員であればさらに「遺族厚生年金」が上乗せされるため、死亡保険金だけで何千万円も用意しなければならないケースは意外と限定的です。</p>
+        </div>
+        <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+          <h3 class="font-bold text-slate-800 text-lg mb-2 flex items-center"><svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>出産育児一時金</h3>
+          <p class="text-sm text-slate-700 mb-0">妊娠・出産にかかる費用の負担を軽減するため、子供１人につき一律で支給される制度です（2023年4月以降は原則50万円）。</p>
+        </div>
+      </div>
+
+      <!-- H2 2 -->
+      <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-blue-500 pb-2 mb-6 mt-12">入りすぎ保険の典型例</h2>
+      <p class="mb-6">不安を解消しようとするあまり、以下のような形で「保障の重複」や「過剰な保険料負担」が発生しているケースが目立ちます。ご自身の保険証券と照らし合わせてみてください。</p>
+
+      <ul class="list-disc list-inside space-y-3 mb-8 text-slate-700">
+        <li><strong>医療保険＋がん保険＋三大疾病保険の重複</strong><br>それぞれ単体で加入すると、入院給付金などが重複して支払われますが、その分保険料も高く付きます。高額療養費制度とある程度の貯蓄があれば、これらをすべてカバーする必要性は低くなります。</li>
+        <li><strong>学資保険の過大設定</strong><br>教育資金の準備として優れていますが、超低金利の現在はインフレ負けの懸念もあります。すべてを学資保険で準備しようとせず、NISAなどのつみたて投資を併用する（または切り替える）ご家庭も増えています。</li>
+        <li><strong>終身型の過剰加入</strong><br>「一生涯の保障で安心」という理由で終身保険を多く契約していると、毎月の支払いが大きく家計を圧迫します。必要な時期（子供が自立するまでなど）だけ保障を厚くする「掛け捨て（定期）型」の活用も検討材料です。</li>
       </ul>
+
+      <!-- H2 3 -->
+      <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-blue-500 pb-2 mb-6 mt-12">保険見直しの4ステップ</h2>
+      
+      <div class="space-y-6 mb-10 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+           <div class="flex items-center justify-center w-10 h-10 rounded-full border-white border-4 bg-orange-400 text-white font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10">1</div>
+           <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+             <h4 class="font-bold text-slate-800 mb-2">現在の保障内容を書き出す</h4>
+             <p class="text-sm text-slate-600 mb-0">自分と家族が、何の保険（医療、死亡、等）に、いくら加入しているかを保険証券を見てリストアップします。</p>
+           </div>
+        </div>
+        
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+           <div class="flex items-center justify-center w-10 h-10 rounded-full border-white border-4 bg-orange-400 text-white font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10">2</div>
+           <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+             <h4 class="font-bold text-slate-800 mb-2">公的保障と照合する</h4>
+             <p class="text-sm text-slate-600 mb-0">高額療養費制度や遺族年金を踏まえ、「本当に自己負担となるリスク」がどれくらいあるのかを把握します。</p>
+           </div>
+        </div>
+
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+           <div class="flex items-center justify-center w-10 h-10 rounded-full border-white border-4 bg-orange-400 text-white font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10">3</div>
+           <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+             <h4 class="font-bold text-slate-800 mb-2">必要保障額を計算する</h4>
+             <p class="text-sm text-slate-600 mb-0">万が一の際、残された家族の生活費や教育費の総額から、公的保障や現在の貯蓄を差し引いて「足りない額」を算出します。</p>
+           </div>
+        </div>
+
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+           <div class="flex items-center justify-center w-10 h-10 rounded-full border-white border-4 bg-orange-400 text-white font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10">4</div>
+           <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+             <h4 class="font-bold text-slate-800 mb-2">不要分を整理する</h4>
+             <p class="text-sm text-slate-600 mb-0">計算した必要保障額に対して過剰な特約を解約したり、不足している場合は掛け捨て保険でカバーするように調整します。</p>
+           </div>
+        </div>
+      </div>
+
+      <!-- Mid (Light) CTA -->
+      <div class="my-10 bg-[#F9FAFB] py-6 px-4 md:px-8 rounded-xl border border-slate-200 flex flex-col items-center">
+        <p class="text-sm font-bold text-slate-800 mb-3 flex items-center">
+          <span class="mr-1.5 text-lg">💡</span> 自分で判断が難しい場合は、無料相談という選択肢もあります
+        </p>
+        <a href="#" class="track-cta inline-flex items-center justify-center bg-white border border-slate-200 hover:bg-slate-50 text-slate-800 font-bold py-3 px-8 rounded-lg transition-colors no-underline text-sm shadow-sm" data-cta="insurance_mid" data-offer="findit" style="max-width: 80%;">
+          <span class="cta-text">無料で相談内容を確認</span>
+        </a>
+      </div>
+
+      <!-- H2 4 -->
+      <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-blue-500 pb-2 mb-6 mt-12">ケース別の考え方</h2>
+      <p class="mb-4">家族構成や働き方によって、必要な備えは大きく変わります。</p>
+
+      <div class="grid md:grid-cols-2 gap-4 mb-8">
+        <div class="bg-blue-50 p-5 rounded-xl">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">👨‍👩‍👦 共働き世帯</h3>
+          <p class="text-sm text-slate-700">お互いに収入があるため、一方が倒れても直ちに家計が破綻しにくいのが強みです。死亡保障はあまり高額にせず、生活を立て直す間（２〜３年）の生活費の補填程度を掛け捨てで用意し、余ったお金は資産運用に回すスタイルが人気です。</p>
+        </div>
+        <div class="bg-blue-50 p-5 rounded-xl">
+          <h3 class="text-lg font-bold text-blue-900 mb-2">🏠 専業主婦（夫）世帯</h3>
+          <p class="text-sm text-slate-700">働き手の収入が途絶えると一気に生活が困窮するリスクが高くなります。そのため、働き手に対する死亡保障や収入保障保険は手厚く用意しておく必要があります。逆にサポート側の保障は最低限（お葬式代等）で済ませることが一般的です。</p>
+        </div>
+        <div class="bg-green-50 p-5 rounded-xl md:col-span-2">
+          <h3 class="text-lg font-bold text-green-900 mb-2">🍼 子どもの人数</h3>
+          <p class="text-sm text-slate-700">「子ども1人あたり教育費が1,000万円かかる」と言われます。しかし、高校生以下なら大学の学費まで時間があるため、幼少期は死亡保険で万が一に備えつつ、並行してつみたて投資などで現金を形成していくアプローチが現代の主流です。子どもが独立したら、多額の死亡保障は思い切って解約しましょう。</p>
+        </div>
+      </div>
+      
+    </article>
+
+    <!-- Bottom Strong CTA -->
+    <div class="mt-16">
+      <h2 class="text-xl font-bold text-slate-900 mb-4 border-b pb-2">まとめ｜保障が適正かチェックする方法</h2>
+      <p class="text-slate-700 mb-6 text-sm">保険は見えない「安心」を買う商品だからこそ、客観的な目と計算が必要です。保険証券を取り出して見直すのが面倒な方や、自分に必要な保障額が分からない方は、オンラインでプロの意見を聞いてみるのも有効な手段です。<br><span class="text-xs text-slate-400">※本ページはアフィリエイト広告を含みます。</span></p>
+
+      <div class="bg-white border border-slate-200 rounded-xl p-5 md:p-6 flex flex-col md:flex-row gap-6 shadow-sm hover:shadow-md hover:border-blue-300 transition-all">
+        <div class="flex-grow">
+          <h4 class="text-lg md:text-xl font-bold text-slate-800 mb-4 pb-3 border-b border-slate-100">ファインドイット</h4>
+          <ul class="text-sm md:text-base text-slate-700 space-y-3 mb-6 md:mb-0">
+            <li class="flex items-center"><svg class="w-5 h-5 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>無料オンライン相談</li>
+            <li class="flex items-center"><svg class="w-5 h-5 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>複数社から最適な見直しを提案</li>
+            <li class="flex items-center"><svg class="w-5 h-5 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>公式情報では強引な営業は行わない方針</li>
+          </ul>
+        </div>
+        <div class="flex items-center md:w-1/3">
+           <a href="#" class="track-cta block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-4 px-6 rounded-xl transition-all duration-200 ease-in-out text-base" data-cta="insurance_bottom" data-offer="findit">
+             <span class="cta-text">無料で相談内容を確認 &rarr;</span>
+           </a>
+        </div>
+      </div>
     </div>
 
     <!-- Warning / Disclaimer -->
-    <div class="bg-yellow-50 border border-yellow-200 text-yellow-800 p-5 rounded-xl text-sm mb-10 flex items-start">
-      <svg class="w-5 h-5 mr-3 mt-0.5 flex-shrink-0 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-      <div>
-        <p class="font-bold mb-1">ご注意事項</p>
-        <p>本ページの情報は一般的な目安であり、実際の効果や最適なプランは個人の状況によって異なります。各種サービスの契約等に際しては、提供元の公式規定や最新情報を必ずご確認のうえ、ご自身の判断でご対応ください。</p>
-      </div>
+    <div class="bg-slate-50 border border-slate-200 text-slate-600 p-5 rounded-xl text-xs mt-12 mb-10">
+      <p class="font-bold mb-1">ご注意事項</p>
+      <p>本ページの情報は一般的な目安であり、実際の効果や最適なプランは個人の状況によって異なります。各種サービスの契約等に際しては、提供元の公式規定や最新情報を必ずご確認のうえ、ご自身の判断でご対応ください。</p>
     </div>
 
-    <!-- CTA & Navigation -->
-    <div class="text-center space-y-6">
-      <div class="mb-10">
-        <a href="#" class="inline-flex items-center justify-center w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 group no-underline">
-          おすすめのサービスを見る
-          <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-        </a>
-      </div>
-      
+    <!-- Back to Score buttons -->
+    <div class="text-center space-y-6 mt-10">
       <div class="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="/score?result=true" class="inline-flex items-center justify-center w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl shadow transition-colors no-underline">
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-          診断結果を見る
+          診断結果に戻る
         </a>
         <a href="/score" class="inline-flex items-center justify-center w-full sm:w-auto bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold py-3 px-6 rounded-xl transition-colors no-underline">
           <svg class="w-5 h-5 mr-2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
@@ -74,3 +176,74 @@ import Layout from '../layouts/Layout.astro';
 
   </div>
 </Layout>
+
+<script>
+  // Configuration for Official Affiliate URLs
+  const supportLinks: Record<string, string> = {
+    findit: ''
+  };
+
+  document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Initialize CTA fallback states if URLs are missing
+    const updateDisabledCtas = () => {
+      document.querySelectorAll('.track-cta').forEach((btn) => {
+        const offer = btn.getAttribute('data-offer');
+        if (offer) {
+          const url = supportLinks[offer];
+          if (url) {
+            btn.setAttribute('href', url);
+            btn.setAttribute('target', '_blank');
+            btn.setAttribute('rel', 'noopener noreferrer');
+          } else {
+            // Disabled state style + fallback action
+            btn.setAttribute('href', 'javascript:void(0)');
+            btn.classList.add('opacity-60', 'cursor-not-allowed', 'hover:bg-[#EFF6FF]', 'hover:text-[#2563EB]', 'hover:shadow-none');
+            btn.removeAttribute('target');
+            btn.removeAttribute('rel');
+            btn.setAttribute('title', 'リンク取得後に有効化します');
+            
+            const textSpan = btn.querySelector('.cta-text');
+            if (textSpan) {
+              const currentText = textSpan.innerHTML.replace(' &rarr;', '');
+              textSpan.innerHTML = `${currentText}（準備中）`;
+            }
+          }
+        }
+      });
+    };
+    
+    updateDisabledCtas();
+
+    // 2. Handle Click Interception
+    document.body.addEventListener('click', (e) => {
+      const target = (e.target as HTMLElement).closest('.track-cta') as HTMLAnchorElement;
+      
+      if (target) {
+        const href = target.getAttribute('href');
+        if (!href || href === '#' || href === 'javascript:void(0)') {
+          e.preventDefault();
+        }
+
+        const ctaId = target.getAttribute('data-cta');
+        const offer = target.getAttribute('data-offer') || 'none';
+        const pagePath = window.location.pathname;
+        
+        console.log('[Event Tracking]', 'cta_click', {
+          cta_id: ctaId,
+          offer: offer,
+          page_path: pagePath
+        });
+        
+        // Uncomment below to send to GA4 once installed
+        // if (typeof window.gtag === 'function') {
+        //   window.gtag('event', 'cta_click', { 
+        //     cta_id: ctaId, 
+        //     offer: offer, 
+        //     page_path: pagePath 
+        //   });
+        // }
+      }
+    });
+  });
+</script>

@@ -381,6 +381,27 @@ import AffiliateScoreCards from '../components/AffiliateScoreCards.astro';
             stepsHtml += '</ul></div>';
           }
 
+          // Shared configuration for inline URLs (matches AffiliateScoreCards.astro)
+          const supportLinks: Record<string, string> = {
+            uq: '',
+            libmo: '',
+            findit: ''
+          };
+
+          // Helper to generate CTA attributes safely
+          const getCtaAttributes = (offer: string) => {
+            const url = supportLinks[offer];
+            if (url) {
+              return `href="${url}" target="_blank" rel="noopener noreferrer"`;
+            } else {
+              return `href="javascript:void(0)" title="リンク取得後に有効化します" class="opacity-60 cursor-not-allowed hover:bg-[#EFF6FF] hover:text-[#2563EB] hover:shadow-none"`;
+            }
+          };
+
+          const getCtaText = (baseText: string, offer: string) => {
+             return supportLinks[offer] ? baseText : baseText + '（準備中）';
+          };
+
           let inlineCtaHtml = '';
           if (rec.link === '/sim-compare') {
             inlineCtaHtml = `
@@ -399,8 +420,8 @@ import AffiliateScoreCards from '../components/AffiliateScoreCards.astro';
                         <li class="flex items-center"><svg class="w-3 h-3 text-blue-500 mr-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>家族割あり</li>
                       </ul>
                     </div>
-                    <a href="#" target="_blank" rel="noopener noreferrer" data-cta="sim_uq_inline" data-position="inline" class="score-cta-btn shrink-0 w-full sm:w-auto text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] font-bold py-2 px-4 rounded-lg transition-colors text-xs">
-                      公式で料金を見る &rarr;
+                    <a ${getCtaAttributes('uq')} data-cta="sim_uq_inline" data-offer="uq" data-position="inline" class="score-cta-btn \${!supportLinks['uq'] ? 'opacity-60 cursor-not-allowed hover:bg-[#EFF6FF] hover:text-[#2563EB]' : ''} shrink-0 w-full sm:w-auto text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] font-bold py-2 px-4 rounded-lg transition-colors text-xs">
+                      <span class="cta-text">${getCtaText('公式で料金を見る', 'uq')}</span>
                     </a>
                   </div>
 
@@ -413,8 +434,8 @@ import AffiliateScoreCards from '../components/AffiliateScoreCards.astro';
                         <li class="flex items-center"><svg class="w-3 h-3 text-blue-500 mr-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>シンプル料金</li>
                       </ul>
                     </div>
-                    <a href="#" target="_blank" rel="noopener noreferrer" data-cta="sim_libmo_inline" data-position="inline" class="score-cta-btn shrink-0 w-full sm:w-auto text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] font-bold py-2 px-4 rounded-lg transition-colors text-xs">
-                      詳細を確認する &rarr;
+                    <a ${getCtaAttributes('libmo')} data-cta="sim_libmo_inline" data-offer="libmo" data-position="inline" class="score-cta-btn \${!supportLinks['libmo'] ? 'opacity-60 cursor-not-allowed hover:bg-[#EFF6FF] hover:text-[#2563EB]' : ''} shrink-0 w-full sm:w-auto text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] font-bold py-2 px-4 rounded-lg transition-colors text-xs">
+                      <span class="cta-text">${getCtaText('詳細を確認する', 'libmo')}</span>
                     </a>
                   </div>
                 </div>
@@ -435,8 +456,8 @@ import AffiliateScoreCards from '../components/AffiliateScoreCards.astro';
                       <li class="flex items-center"><svg class="w-3 h-3 text-blue-500 mr-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>複数社から最適提案</li>
                     </ul>
                   </div>
-                  <a href="#" target="_blank" rel="noopener noreferrer" data-cta="hoken_findit_inline" data-position="inline" class="score-cta-btn shrink-0 w-full sm:w-auto text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] font-bold py-2 px-4 rounded-lg transition-colors text-xs">
-                    無料で相談内容を確認 &rarr;
+                  <a ${getCtaAttributes('findit')} data-cta="hoken_findit_inline" data-offer="findit" data-position="inline" class="score-cta-btn \${!supportLinks['findit'] ? 'opacity-60 cursor-not-allowed hover:bg-[#EFF6FF] hover:text-[#2563EB]' : ''} shrink-0 w-full sm:w-auto text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] font-bold py-2 px-4 rounded-lg transition-colors text-xs">
+                    <span class="cta-text">${getCtaText('無料で相談内容を確認', 'findit')}</span>
                   </a>
                 </div>
               </div>
