@@ -1,0 +1,108 @@
+---
+// src/components/AffiliateScoreCards.astro
+---
+
+<div class="space-y-10 mb-12">
+  <!-- 通信・ネット枠 -->
+  <div class="bg-blue-50/50 p-6 md:p-8 rounded-2xl border border-blue-100">
+    <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2 flex items-center">
+      <span class="mr-2">💡</span> 今すぐ実行できる改善サポート
+    </h3>
+    <p class="text-slate-600 mb-6 text-sm md:text-base">改善提案を実行する際に参考になるサービスです。</p>
+    
+    <div class="grid md:grid-cols-3 gap-4">
+      <!-- UQ mobile -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-blue-300 transition-all">
+        <div>
+          <h4 class="text-lg font-bold text-slate-800 mb-4 pb-3 border-b border-slate-100">UQ mobile</h4>
+          <ul class="text-sm text-slate-700 space-y-2 mb-6">
+            <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>au回線で安定</li>
+            <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>家族割あり</li>
+            <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>店舗サポートあり</li>
+          </ul>
+        </div>
+        <a href="#" target="_blank" rel="noopener noreferrer" data-cta="sim_uq" class="score-cta-btn block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-3 px-4 rounded-lg transition-all duration-200 ease-in-out text-sm">
+          公式で料金を見る &rarr;
+        </a>
+      </div>
+
+      <!-- LIBMO -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-blue-300 transition-all">
+        <div>
+          <h4 class="text-lg font-bold text-slate-800 mb-4 pb-3 border-b border-slate-100">LIBMO</h4>
+          <ul class="text-sm text-slate-700 space-y-2 mb-6">
+            <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>低価格重視</li>
+            <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>端末セットあり</li>
+            <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>シンプルプラン</li>
+          </ul>
+        </div>
+        <a href="#" target="_blank" rel="noopener noreferrer" data-cta="sim_libmo" class="score-cta-btn block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-3 px-4 rounded-lg transition-all duration-200 ease-in-out text-sm">
+          詳細を確認する &rarr;
+        </a>
+      </div>
+
+      <!-- イツキ光 -->
+      <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-blue-300 transition-all">
+        <div>
+          <h4 class="text-lg font-bold text-slate-800 mb-4 pb-3 border-b border-slate-100">イツキ光</h4>
+          <ul class="text-sm text-slate-700 space-y-2 mb-6">
+            <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>NTT回線で安心</li>
+            <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>キャリア問わずお得</li>
+            <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>シンプルな料金設定</li>
+          </ul>
+        </div>
+        <a href="#" target="_blank" rel="noopener noreferrer" data-cta="hikari_itsuki" class="score-cta-btn block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-3 px-4 rounded-lg transition-all duration-200 ease-in-out text-sm">
+          料金プランを見る &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 保険枠 -->
+  <div class="bg-blue-50/50 p-6 md:p-8 rounded-2xl border border-blue-100">
+    <h3 class="text-xl md:text-2xl font-bold text-slate-800 mb-2 flex items-center">
+      <span class="mr-2">🛡</span> 保障が適正かチェックする
+    </h3>
+    <p class="text-slate-600 mb-6 text-sm md:text-base">ライフステージに合わせて、保障内容が適正か確認してみましょう。</p>
+    
+    <div class="bg-white border border-slate-200 rounded-xl p-5 md:p-6 flex flex-col md:flex-row gap-6 shadow-sm hover:shadow-md hover:border-blue-300 transition-all">
+      <div class="flex-grow">
+        <h4 class="text-lg md:text-xl font-bold text-slate-800 mb-4 pb-3 border-b border-slate-100">ファインドイット</h4>
+        <ul class="text-sm md:text-base text-slate-700 space-y-3 mb-6 md:mb-0">
+          <li class="flex items-center"><svg class="w-5 h-5 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>無料オンライン相談</li>
+          <li class="flex items-center"><svg class="w-5 h-5 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>複数社から最適な提案</li>
+          <li class="flex items-center"><svg class="w-5 h-5 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>しつこい営業なし</li>
+        </ul>
+      </div>
+      <div class="flex items-center md:w-1/3">
+        <a href="#" target="_blank" rel="noopener noreferrer" data-cta="hoken_findit" class="score-cta-btn block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-4 px-6 rounded-xl transition-all duration-200 ease-in-out text-base">
+          無料で相談内容を確認 &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('click', (e) => {
+      const target = (e.target as HTMLElement).closest('.score-cta-btn');
+      if (target) {
+        const ctaName = target.getAttribute('data-cta');
+        const position = target.getAttribute('data-position') || 'cards';
+        const page = window.location.pathname;
+        
+        console.log('[Event Tracking]', 'cta_click', {
+          cta: ctaName,
+          page: page,
+          position: position
+        });
+        
+        // Uncomment and update if gtag is available
+        // if (typeof window.gtag === 'function') {
+        //   window.gtag('event', 'cta_click', { cta: ctaName, page: page, position: position });
+        // }
+      }
+    });
+  });
+</script>

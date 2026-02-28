@@ -3,66 +3,360 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="格安SIM乗り換えガイド | くらしスコア" description="毎月のスマホ代を劇的に下げる。格安SIMへの乗り換え手順と比較ポイント。">
-  <div class="max-w-3xl mx-auto py-12 md:py-16 px-4">
+  <!-- SEO/Schema JSON-LD -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "格安SIMにすると通信速度は遅くなりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "時間帯によっては大手キャリアより遅くなることがあります。特にお昼休みや夕方の通勤時間帯は混雑しやすいですが、LINEやネット検索など日常的な利用であればほとんど問題ありません。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "今のスマホ端末はそのまま使えますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "多くの場合、そのまま利用可能です。ただし、一部の古い端末ではSIMロック解除が必要になる場合や、対応バンドが異なる場合がありますので、事前に乗り換え先の動作確認端末一覧をチェックすることをおすすめします。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "違約金はかかりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "現在、大手キャリアの多くは違約金を撤廃しています。したがって、いつ乗り換えても基本的には解約違約金は発生しません（ただし初期手数料等がかかる場合はあります）。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "キャリアメール（@docomo.ne.jpなど）は使えなくなりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "キャリアの「メール持ち運びサービス（有料）」を利用すれば引き継ぐことも可能です。ただし、これを機にGmailやYahoo!メールなどのフリーメールに移行すると、今後の乗り換えがより簡単になります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "家族割がなくなると損しませんか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "大手キャリアの家族割（一人あたり月額1,000円前後の割引）がなくなっても、格安SIM自体の基本料金が数千円安いため、トータルで見ると個別に格安SIMに乗り換えた方が安くなるケースがほとんどです。"
+        }
+      }
+    ]
+  })} />
+
+  <div class="max-w-3xl mx-auto md:py-16 pt-8 pb-16 px-4">
     
-    <!-- Header -->
-    <div class="text-center mb-10">
+    <!-- Breadcrumbs -->
+    <nav class="text-sm text-slate-500 mb-6 flex space-x-2" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-blue-600 transition-colors">TOP</a>
+      <span>&gt;</span>
+      <a href="/articles" class="hover:text-blue-600 transition-colors">解説記事</a>
+      <span>&gt;</span>
+      <span class="text-slate-800 font-bold">格安SIM乗り換えガイド</span>
+    </nav>
+
+    <!-- Header 導入 -->
+    <div class="text-center mb-10 mt-6">
       <div class="bg-blue-50 text-blue-800 p-4 rounded-full inline-block mb-4">
         <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
       </div>
-      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-slate-900 leading-tight">格安SIM乗り換えガイド</h1>
-      <p class="text-lg text-slate-600">毎月のスマホ代を劇的に下げる。格安SIMへの乗り換え手順と比較ポイント。</p>
-    </div>
-
-    <!-- Points Content -->
-    <div class="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-200 mb-10">
-      <h2 class="text-xl font-bold text-slate-800 mb-6 flex items-center border-b pb-4">
-        <svg class="w-6 h-6 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
-        知っておくべき3つのポイント
-      </h2>
+      <h1 class="text-3xl md:text-4xl font-bold mb-6 text-slate-900 leading-tight">格安SIM乗り換えガイド</h1>
       
-      <ul class="space-y-6">
-        
-        <li class="flex items-start">
-          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold mr-4 mt-0.5">1</span>
-          <p class="text-slate-700 leading-relaxed pt-1">大手キャリアから乗り換えるだけで年間数万円の節約が可能</p>
-        </li>
-        
-        <li class="flex items-start">
-          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold mr-4 mt-0.5">2</span>
-          <p class="text-slate-700 leading-relaxed pt-1">電話番号や端末はそのまま引き継げる</p>
-        </li>
-        
-        <li class="flex items-start">
-          <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold mr-4 mt-0.5">3</span>
-          <p class="text-slate-700 leading-relaxed pt-1">家族割の恩恵より、個別に安いプランを契約する方が安いケースが多い</p>
-        </li>
-        
-      </ul>
-    </div>
-
-    <!-- Warning / Disclaimer -->
-    <div class="bg-yellow-50 border border-yellow-200 text-yellow-800 p-5 rounded-xl text-sm mb-10 flex items-start">
-      <svg class="w-5 h-5 mr-3 mt-0.5 flex-shrink-0 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-      <div>
-        <p class="font-bold mb-1">ご注意事項</p>
-        <p>本ページの情報は一般的な目安であり、実際の効果や最適なプランは個人の状況によって異なります。各種サービスの契約等に際しては、提供元の公式規定や最新情報を必ずご確認のうえ、ご自身の判断でご対応ください。</p>
+      <div class="text-left md:text-center text-slate-700 space-y-4 text-base md:text-lg">
+        <p>毎月のスマホ代を劇的に下げるための格安SIM選び。</p>
+        <p>「手続きが面倒そう」「安くなるかわからない」と感じて行動を後回しにしていませんか？実は、格安SIMへの乗り換えは一度手続きを終えてしまえば、その後ずっと数万円の節約効果が持続するもっとも有効な家計改善策のひとつです。</p>
+        <p class="font-bold text-blue-700 bg-blue-50 inline-block px-4 py-2 rounded-lg">家計スコア診断で『通信費の見直し』が優先と出た方は、このページで具体的な比較と手順を確認できます。</p>
       </div>
     </div>
 
-    <!-- CTA & Navigation -->
-    <div class="text-center space-y-6">
-      <div class="mb-10">
-        <a href="#" class="inline-flex items-center justify-center w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 group no-underline">
-          おすすめのサービスを見る
-          <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+    <!-- Top CTA -->
+    <div class="text-center bg-orange-50/50 p-6 rounded-2xl border border-orange-100 mb-12">
+      <p class="text-sm text-slate-600 font-bold mb-3">まずは公式の料金・条件を確認して、あなたの使い方に合うかチェックしましょう。</p>
+      <a href="#" class="track-cta inline-flex items-center justify-center w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 group no-underline" data-cta="sim_compare_top" data-offer="mixed">
+        おすすめのサービスを見る
+        <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+      </a>
+    </div>
+
+    <!-- Article Content -->
+    <article class="prose prose-slate prose-blue max-w-none">
+      
+      <!-- Table Section -->
+      <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-blue-500 pb-2 mb-6 mt-12">主要格安SIMの料金比較</h2>
+      <p class="mb-6">今回は、家計改善の第一歩として検討しやすい代表的な2社（UQ mobile / LIBMO）の特徴と料金を比較します。</p>
+      
+      <div class="overflow-x-auto mb-10 -mx-4 md:mx-0 px-4 md:px-0">
+        <table class="w-full text-left border-collapse min-w-[500px]">
+          <thead>
+            <tr class="bg-slate-100 text-slate-700">
+              <th class="p-4 border-b border-slate-200 font-bold">項目</th>
+              <th class="p-4 border-b border-slate-200 font-bold text-blue-700">UQ mobile</th>
+              <th class="p-4 border-b border-slate-200 font-bold text-blue-700">LIBMO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-4 border-b border-slate-200 font-bold text-slate-700">利用回線</td>
+              <td class="p-4 border-b border-slate-200">au</td>
+              <td class="p-4 border-b border-slate-200">ドコモ</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-4 border-b border-slate-200 font-bold text-slate-700">小容量プラン</td>
+              <td class="p-4 border-b border-slate-200">4GB / 月額2,365円<br><span class="text-xs text-slate-500">※各種割引適用前目安</span></td>
+              <td class="p-4 border-b border-slate-200">3GB / 月額980円<br><span class="text-xs text-slate-500">※なっとくプラン</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-4 border-b border-slate-200 font-bold text-slate-700">中容量プラン</td>
+              <td class="p-4 border-b border-slate-200">15GB / 月額3,465円<br><span class="text-xs text-slate-500">※各種割引適用前目安</span></td>
+              <td class="p-4 border-b border-slate-200">20GB / 月額1,991円<br><span class="text-xs text-slate-500">※なっとくプラン</span></td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-4 border-b border-slate-200 font-bold text-slate-700">家族割の有無</td>
+              <td class="p-4 border-b border-slate-200">あり</td>
+              <td class="p-4 border-b border-slate-200">なし（単体で安い）</td>
+            </tr>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-4 border-b border-slate-200 font-bold text-slate-700">店舗サポート</td>
+              <td class="p-4 border-b border-slate-200">全国のau/UQ店舗</td>
+              <td class="p-4 border-b border-slate-200">一部店舗のみ・基本ネット</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Pros and Cons -->
+      <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-blue-500 pb-2 mb-6 mt-12">それぞれのメリット・デメリット</h2>
+      
+      <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
+        <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center mr-2 text-sm">UQ</span>
+        UQ mobile のメリット・デメリット
+      </h3>
+      <div class="grid md:grid-cols-2 gap-4 mb-8">
+        <div class="bg-blue-50 p-5 rounded-xl border border-blue-100">
+          <h4 class="font-bold text-blue-800 mb-3 flex items-center"><svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>メリット</h4>
+          <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
+            <li>au回線をそのまま利用するため通信速度が安定している</li>
+            <li>「自宅セット割」や「家族セット割」など割引が豊富</li>
+            <li>全国のau/UQスポットで直接対面サポートが受けられる</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 p-5 rounded-xl border border-red-100">
+          <h4 class="font-bold text-red-800 mb-3 flex items-center"><svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>デメリット</h4>
+          <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
+            <li>割引（ネット回線のセット等）を適用しないと基本料金はやや高め</li>
+            <li>プランの選択肢が少ない</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center">
+        <span class="w-6 h-6 rounded bg-slate-800 text-white flex items-center justify-center mr-2 text-sm">LI</span>
+        LIBMO のメリット・デメリット
+      </h3>
+      <div class="grid md:grid-cols-2 gap-4 mb-8">
+        <div class="bg-blue-50 p-5 rounded-xl border border-blue-100">
+          <h4 class="font-bold text-blue-800 mb-3 flex items-center"><svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>メリット</h4>
+          <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
+            <li>複雑な割引条件なしで、基本料金が圧倒的に安い</li>
+            <li>NTTドコモ回線を利用できるため対応エリアが広い</li>
+            <li>スマホ端末のセット購入がお得になるキャンペーンが多い</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 p-5 rounded-xl border border-red-100">
+          <h4 class="font-bold text-red-800 mb-3 flex items-center"><svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>デメリット</h4>
+          <ul class="list-disc list-inside text-sm text-slate-700 space-y-1">
+            <li>お昼休みなど混雑する時間帯に通信速度が落ちることがある</li>
+            <li>店舗でのサポートが限られており、基本はネット手続き対応となる</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Target Audience & Mid CTA -->
+      <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-blue-500 pb-2 mb-6 mt-12">どんな人に向いてる？</h2>
+      
+      <h3 class="text-xl font-bold text-slate-800 mt-6 mb-3">安定重視なら UQ mobile</h3>
+      <p class="mb-4">大手キャリアと同等の通信品質をキープしつつ、店舗でのサポートも残しておきたい方におすすめです。特に、すでにauをご利用中の方や、ご自宅のインターネット回線対象サービスをご利用中の方は、家族割などを絡めることで大きな恩恵を受けられます。</p>
+
+      <h3 class="text-xl font-bold text-slate-800 mt-8 mb-3">価格・シンプルさ重視なら LIBMO</h3>
+      <p class="mb-6">とにかく毎月の固定費を最低限に抑えたい方におすすめです。「家族割」などの複雑な条件を満たす必要がなく、単身者でもシンプルに安く使える点が魅力です。普段は自宅や職場のWi-Fiが中心で、外で高画質の動画をあまり見ないという方に最適です。</p>
+
+      <!-- Mid (Light) CTA -->
+      <div class="text-center my-10 bg-slate-50 py-6 px-4 rounded-xl border border-slate-200">
+        <p class="text-sm font-bold text-slate-700 mb-3">＼ まずは公式ページで最新のキャンペーンを確認 ／</p>
+        <a href="#" class="track-cta inline-flex items-center justify-center bg-white border border-blue-200 hover:bg-blue-50 text-blue-700 font-bold py-3 px-6 rounded-lg transition-colors no-underline text-sm shadow-sm" data-cta="sim_compare_mid" data-offer="mixed">
+          最新料金を公式で確認する
+          <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
         </a>
       </div>
+
+      <!-- Steps -->
+      <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-blue-500 pb-2 mb-6 mt-12">格安SIMへの乗り換え５ステップ</h2>
+      <p class="mb-6">今の電話番号をそのまま引き継いで乗り換える（MNP）のは、思っているよりも簡単です。以下のステップで進められます。</p>
+
+      <div class="space-y-6 mb-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
+        
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+           <div class="flex items-center justify-center w-10 h-10 rounded-full border-white border-4 bg-blue-500 text-white font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10">1</div>
+           <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+             <h4 class="font-bold text-slate-800 mb-2">MNP予約番号の取得</h4>
+             <p class="text-sm text-slate-600 mb-0">現在契約しているキャリア（docomo、au、SoftBankなど）のWebサイトや電話で「MNP予約番号」を発行します。※最近は「MNPワンストップ方式」に対応した会社間であれば、この手順が不要になる場合があります。</p>
+           </div>
+        </div>
+        
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+           <div class="flex items-center justify-center w-10 h-10 rounded-full border-white border-4 bg-blue-500 text-white font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10">2</div>
+           <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+             <h4 class="font-bold text-slate-800 mb-2">乗り換え先の格安SIMを申し込む</h4>
+             <p class="text-sm text-slate-600 mb-0">取得したMNP予約番号と、本人確認書類（運転免許証など）、クレジットカードを用意して、乗り換え先の公式サイトから申し込みをします。</p>
+           </div>
+        </div>
+
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+           <div class="flex items-center justify-center w-10 h-10 rounded-full border-white border-4 bg-blue-500 text-white font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10">3</div>
+           <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+             <h4 class="font-bold text-slate-800 mb-2">新しいSIMカードの到着を待つ</h4>
+             <p class="text-sm text-slate-600 mb-0">数日で自宅に新しいSIMカードが郵送されてきます。eSIMを選択した場合は、郵送を待たずに即日で開通手続きへ進めます。</p>
+           </div>
+        </div>
+
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+           <div class="flex items-center justify-center w-10 h-10 rounded-full border-white border-4 bg-blue-500 text-white font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10">4</div>
+           <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+             <h4 class="font-bold text-slate-800 mb-2">開通（回線切り替え）手続き</h4>
+             <p class="text-sm text-slate-600 mb-0">同封されているマニュアルに従って、Web上または電話で回線の切り替え手続きを行います。この作業が完了すると、元の携帯会社の契約は自動的に解約されます。</p>
+           </div>
+        </div>
+
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+           <div class="flex items-center justify-center w-10 h-10 rounded-full border-white border-4 bg-blue-500 text-white font-bold shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-sm z-10">5</div>
+           <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+             <h4 class="font-bold text-slate-800 mb-2">SIMの入れ替え・APN設定</h4>
+             <p class="text-sm text-slate-600 mb-0">スマホの電源を切り、新しいSIMカードを挿入します。その後スマートフォン上で「APN設定（ネットに繋ぐための簡単な設定ファイルダウンロード）」を行えば完了です。</p>
+           </div>
+        </div>
+
+      </div>
+
+      <!-- FAQ -->
+      <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-blue-500 pb-2 mb-6 mt-16">よくある質問</h2>
       
+      <dl class="space-y-4 mb-12">
+        <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+          <dt class="font-bold text-slate-800 text-lg flex items-start">
+            <span class="text-blue-500 font-black mr-3 mt-0.5">Q.</span>
+            格安SIMにすると通信速度は遅くなりますか？
+          </dt>
+          <dd class="text-slate-600 mt-2 pl-8 flex items-start">
+            <span class="text-red-400 font-bold mr-3 mt-0.5">A.</span>
+            <div>時間帯によっては大手キャリアより遅くなることがあります。特にお昼休みや夕方の通勤時間帯は混雑しやすいですが、LINEやネット検索など日常的な利用であればほとんど問題ありません。</div>
+          </dd>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+          <dt class="font-bold text-slate-800 text-lg flex items-start">
+            <span class="text-blue-500 font-black mr-3 mt-0.5">Q.</span>
+            今のスマホ端末はそのまま使えますか？
+          </dt>
+          <dd class="text-slate-600 mt-2 pl-8 flex items-start">
+            <span class="text-red-400 font-bold mr-3 mt-0.5">A.</span>
+            <div>多くの場合、そのまま利用可能です。ただし、一部の古い端末ではSIMロック解除が必要になる場合や、対応バンドが異なる場合がありますので、事前に乗り換え先の動作確認端末一覧をチェックすることをおすすめします。</div>
+          </dd>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+          <dt class="font-bold text-slate-800 text-lg flex items-start">
+            <span class="text-blue-500 font-black mr-3 mt-0.5">Q.</span>
+            違約金はかかりますか？
+          </dt>
+          <dd class="text-slate-600 mt-2 pl-8 flex items-start">
+            <span class="text-red-400 font-bold mr-3 mt-0.5">A.</span>
+            <div>現在、大手キャリアの多くは違約金を撤廃しています。したがって、いつ乗り換えても基本的には解約違約金は発生しません（ただし乗り換え先の事務手数料等がかかる場合や、端末代の残債がある場合は支払いが継続します）。</div>
+          </dd>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+          <dt class="font-bold text-slate-800 text-lg flex items-start">
+            <span class="text-blue-500 font-black mr-3 mt-0.5">Q.</span>
+            キャリアメール（@docomo.ne.jpなど）は使えなくなりますか？
+          </dt>
+          <dd class="text-slate-600 mt-2 pl-8 flex items-start">
+            <span class="text-red-400 font-bold mr-3 mt-0.5">A.</span>
+            <div>乗り換え元の「メール持ち運びサービス（月額330円程度）」を利用すれば引き継ぐことも可能です。ただし、これを機にGmailやYahoo!メールなどのフリーメールに移行していくと、今後の乗り換えがより簡単になり経済的です。</div>
+          </dd>
+        </div>
+
+        <div class="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
+          <dt class="font-bold text-slate-800 text-lg flex items-start">
+            <span class="text-blue-500 font-black mr-3 mt-0.5">Q.</span>
+            家族割がなくなると損しませんか？
+          </dt>
+          <dd class="text-slate-600 mt-2 pl-8 flex items-start">
+            <span class="text-red-400 font-bold mr-3 mt-0.5">A.</span>
+            <div>大手キャリアの家族割（一人あたり月額1,000円前後の割引）がなくなっても、格安SIM自体の基本料金が数千円安いため、トータルで見ると個別に格安SIMに乗り換えた方が安くなるケースがほとんどです。</div>
+          </dd>
+        </div>
+      </dl>
+
+      <!-- Summary & Bottom CTAs -->
+      <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 mb-6">
+        <h2 class="text-xl font-bold text-slate-900 mb-3 !mt-0 border-none pb-0">まとめ：まずは行動してみるのが一番の節約</h2>
+        <p class="text-slate-700 mb-0">スマホ代は毎月必ず出ていく固定費です。一度乗り換える少しの手間をかければ、その後何年にもわたって節約効果が続きます。自分に合ったプランを選んで、賢く家計改善を進めましょう。</p>
+      </div>
+      
+    </article>
+
+    <!-- Bottom Strong CTAs -->
+    <div class="mt-12">
+      <div class="text-right mb-2">
+        <span class="text-xs text-slate-400">※本ページはアフィリエイト広告を含みます。</span>
+      </div>
+      
+      <div class="grid md:grid-cols-2 gap-4">
+        <!-- UQ mobile Card -->
+        <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-blue-300 transition-all">
+          <div>
+            <h4 class="text-lg font-bold text-slate-800 mb-4 pb-3 border-b border-slate-100">UQ mobile</h4>
+            <ul class="text-sm text-slate-700 space-y-2 mb-6">
+              <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>au回線で安定・快適</li>
+              <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>豊富なセット割・家族割</li>
+              <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>全国店舗で対面サポート</li>
+            </ul>
+          </div>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="track-cta block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-3 px-4 rounded-lg transition-all duration-200 ease-in-out text-sm" data-cta="sim_compare_uq_bottom" data-offer="uq">
+            公式で料金を見る &rarr;
+          </a>
+        </div>
+
+        <!-- LIBMO Card -->
+        <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-between shadow-sm hover:shadow-md hover:border-blue-300 transition-all">
+          <div>
+            <h4 class="text-lg font-bold text-slate-800 mb-4 pb-3 border-b border-slate-100">LIBMO</h4>
+            <ul class="text-sm text-slate-700 space-y-2 mb-6">
+              <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>とにかく安さ重視</li>
+              <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>端末セット購入がお得</li>
+              <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>使い方に合わせたシンプルプラン</li>
+            </ul>
+          </div>
+          <a href="#" target="_blank" rel="noopener noreferrer" class="track-cta block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-3 px-4 rounded-lg transition-all duration-200 ease-in-out text-sm" data-cta="sim_compare_libmo_bottom" data-offer="libmo">
+            詳細を確認する &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Back to Score buttons -->
+    <div class="text-center space-y-6 mt-16">
       <div class="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-center gap-4">
         <a href="/score?result=true" class="inline-flex items-center justify-center w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl shadow transition-colors no-underline">
           <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-          診断結果を見る
+          診断結果に戻る
         </a>
         <a href="/score" class="inline-flex items-center justify-center w-full sm:w-auto bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-bold py-3 px-6 rounded-xl transition-colors no-underline">
           <svg class="w-5 h-5 mr-2 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
@@ -73,3 +367,32 @@ import Layout from '../layouts/Layout.astro';
 
   </div>
 </Layout>
+
+<script>
+  // Setup GA4 Event Tracking for CTAs
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.addEventListener('click', (e) => {
+      const target = (e.target as HTMLElement).closest('.track-cta');
+      if (target) {
+        const ctaId = target.getAttribute('data-cta');
+        const offer = target.getAttribute('data-offer');
+        const pagePath = window.location.pathname;
+        
+        console.log('[Event Tracking]', 'cta_click', {
+          cta_id: ctaId,
+          offer: offer,
+          page_path: pagePath
+        });
+        
+        // Uncomment below to send to GA4 once installed
+        // if (typeof window.gtag === 'function') {
+        //   window.gtag('event', 'cta_click', { 
+        //     cta_id: ctaId, 
+        //     offer: offer, 
+        //     page_path: pagePath 
+        //   });
+        // }
+      }
+    });
+  });
+</script>
