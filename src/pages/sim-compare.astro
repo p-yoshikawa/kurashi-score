@@ -79,7 +79,7 @@ import Layout from '../layouts/Layout.astro';
     <!-- Top CTA -->
     <div class="text-center bg-orange-50/50 p-6 rounded-2xl border border-orange-100 mb-12">
       <p class="text-sm text-slate-600 font-bold mb-3">まずは公式の料金・条件を確認して、あなたの使い方に合うかチェックしましょう。</p>
-      <a href="#" class="track-cta inline-flex items-center justify-center w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 group no-underline" data-cta="sim_compare_top" data-offer="mixed">
+      <a href="#recommended-services" class="track-cta inline-flex items-center justify-center w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl shadow-md hover:shadow-lg transition-transform hover:-translate-y-1 group no-underline" data-cta="sim_compare_top" data-offer="mixed">
         おすすめのサービスを見る
         <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
       </a>
@@ -191,7 +191,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="text-center my-10 bg-slate-50 py-6 px-4 rounded-xl border border-slate-200">
         <p class="text-sm font-bold text-slate-700 mb-3">＼ まずは公式ページで最新のキャンペーンを確認 ／</p>
         <a href="#" class="track-cta inline-flex items-center justify-center bg-white border border-blue-200 hover:bg-blue-50 text-blue-700 font-bold py-3 px-6 rounded-lg transition-colors no-underline text-sm shadow-sm" data-cta="sim_compare_mid" data-offer="mixed">
-          最新料金を公式で確認する
+          <span class="cta-text">最新料金を公式で確認する</span>
           <svg class="w-4 h-4 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
         </a>
       </div>
@@ -313,7 +313,7 @@ import Layout from '../layouts/Layout.astro';
     </article>
 
     <!-- Bottom Strong CTAs -->
-    <div class="mt-12">
+    <div id="recommended-services" class="mt-12 scroll-mt-6 transition-colors duration-500">
       <div class="text-right mb-2">
         <span class="text-xs text-slate-400">※本ページはアフィリエイト広告を含みます。</span>
       </div>
@@ -329,8 +329,8 @@ import Layout from '../layouts/Layout.astro';
               <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>全国店舗で対面サポート</li>
             </ul>
           </div>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="track-cta block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-3 px-4 rounded-lg transition-all duration-200 ease-in-out text-sm" data-cta="sim_compare_uq_bottom" data-offer="uq">
-            公式で料金を見る &rarr;
+          <a href="#" class="track-cta block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-3 px-4 rounded-lg transition-all duration-200 ease-in-out text-sm" data-cta="sim_compare_uq_bottom" data-offer="uq">
+            <span class="cta-text">公式で料金を見る &rarr;</span>
           </a>
         </div>
 
@@ -344,8 +344,8 @@ import Layout from '../layouts/Layout.astro';
               <li class="flex items-center"><svg class="w-4 h-4 text-blue-500 mr-2 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>使い方に合わせたシンプルプラン</li>
             </ul>
           </div>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="track-cta block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-3 px-4 rounded-lg transition-all duration-200 ease-in-out text-sm" data-cta="sim_compare_libmo_bottom" data-offer="libmo">
-            詳細を確認する &rarr;
+          <a href="#" class="track-cta block w-full text-center bg-[#EFF6FF] text-[#2563EB] hover:bg-[#DBEAFE] hover:text-[#1D4ED8] hover:shadow font-bold py-3 px-4 rounded-lg transition-all duration-200 ease-in-out text-sm" data-cta="sim_compare_libmo_bottom" data-offer="libmo">
+            <span class="cta-text">詳細を確認する &rarr;</span>
           </a>
         </div>
       </div>
@@ -369,14 +369,72 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
-  // Setup GA4 Event Tracking for CTAs
+  // Configuration for Official Affiliate URLs
+  // Provide appropriate external URLs here when finalized. Leave empty to fallback to #recommended-services.
+  const officialUrls: Record<string, string> = {
+    uq: '',
+    libmo: ''
+  };
+
   document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Initialize CTA fallback states if URLs are missing
+    const updateDisabledCtas = () => {
+      document.querySelectorAll('.track-cta').forEach((btn) => {
+        const offer = btn.getAttribute('data-offer');
+        
+        // Mid CTA or any CTA targeting "mixed" -> always fall back to scroll if URL not present
+        if (offer === 'mixed') {
+          // Mixed CTAs do not have a dedicated URL, they intentionally scroll to the recommendations
+          // Usually, top CTA acts as standard jump link.
+          
+          if (!btn.getAttribute('href') || btn.getAttribute('href') === '#') {
+            btn.setAttribute('href', '#recommended-services');
+          }
+          
+          if (btn.getAttribute('data-cta') === 'sim_compare_mid') {
+            const hasAnyUrl = Object.values(officialUrls).some(url => url !== '');
+            if (!hasAnyUrl) {
+                const textSpan = btn.querySelector('.cta-text');
+                if (textSpan) textSpan.innerHTML = '公式ページ準備中（比較一覧へ）';
+            }
+          }
+        } 
+        // Specific Offer CTAs -> target URL or disable and set fallback content
+        else if (offer) {
+          const url = officialUrls[offer];
+          if (url) {
+            btn.setAttribute('href', url);
+            btn.setAttribute('target', '_blank');
+            btn.setAttribute('rel', 'noopener noreferrer');
+          } else {
+            // Disabled state style + fallback action
+            btn.setAttribute('href', '#recommended-services');
+            btn.classList.add('opacity-70', 'cursor-not-allowed', 'hover:bg-[#EFF6FF]', 'hover:text-[#2563EB]', 'hover:shadow-none');
+            // Remove blank targeting to allow smooth scroll instead
+            btn.removeAttribute('target');
+            btn.removeAttribute('rel');
+            const textSpan = btn.querySelector('.cta-text');
+            if (textSpan) textSpan.innerHTML = '公式ページ準備中（比較一覧へ）';
+            
+            // Add a native tooltip for clarity
+            btn.setAttribute('title', 'リンク取得後に有効化します');
+          }
+        }
+      });
+    };
+    
+    updateDisabledCtas();
+
+    // 2. Handle Click Interception (Analytics & Smooth Scrolling Strategy)
     document.body.addEventListener('click', (e) => {
-      const target = (e.target as HTMLElement).closest('.track-cta');
+      const target = (e.target as HTMLElement).closest('.track-cta') as HTMLAnchorElement;
+      
       if (target) {
         const ctaId = target.getAttribute('data-cta');
-        const offer = target.getAttribute('data-offer');
+        const offer = target.getAttribute('data-offer') || 'none';
         const pagePath = window.location.pathname;
+        const href = target.getAttribute('href');
         
         console.log('[Event Tracking]', 'cta_click', {
           cta_id: ctaId,
@@ -392,6 +450,21 @@ import Layout from '../layouts/Layout.astro';
         //     page_path: pagePath 
         //   });
         // }
+
+        // Manage smooth scroll for internal fallback links
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const targetSection = document.getElementById(href.substring(1));
+          
+          if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+            // Add temporary highlight effect to draw attention
+            targetSection.classList.add('bg-blue-50/50', 'ring-2', 'ring-blue-100', 'rounded-2xl', '-m-4', 'p-4');
+            setTimeout(() => {
+              targetSection.classList.remove('bg-blue-50/50', 'ring-2', 'ring-blue-100', 'rounded-2xl', '-m-4', 'p-4');
+            }, 1200);
+          }
+        }
       }
     });
   });
